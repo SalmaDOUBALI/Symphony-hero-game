@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symphony Hero</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="ui-layer">
+            <div id="main-menu">
+                <h1 class="title">SYMPHONY HERO</h1>
+                <button id="start-btn" class="shiny-btn">START TO PLAY</button>
+            </div>
+            
+            <div id="hud" class="hidden">
+                <div class="score">SCORE: <span id="score-val">0</span> / 10</div>
+                <div class="hearts" id="hearts-container">❤️❤️❤️</div>
+                <div class="controls-hint">WASD/Flèches: Bouger • Espace/Shift: Dash</div>
+            </div>
+
+            <div id="game-over" class="hidden">
+                <h2 id="go-title">GAME OVER</h2>
+                <button id="restart-btn" class="shiny-btn">RETRY</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
