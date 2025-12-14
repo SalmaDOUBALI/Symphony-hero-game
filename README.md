@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://localhost:8000" target="_blank">
-    <img width="300" src="https://media.giphy.com/media/3o6gEfTt3x2LsVZQRy/giphy.gif" alt="Cliquer pour jouer à Symphony Hero">
+    <img width="300" src="https://giphy.com/gifs/hannahnance-kawaii-pattern-hearts-tBb19f3bR3ECInPavao" alt="Cliquer pour jouer à Symphony Hero">
   </a>
 </p>
 
