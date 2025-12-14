@@ -14,7 +14,9 @@ You play as a small square surviving against waves of aggressive musical notes o
 
 ## How to Play
 The goal is simple: survive the waves and defeat enemies to reach the target score.
+
 **see this demo!**
+
 https://github.com/user-attachments/assets/8b887610-9929-446a-a543-dd62d2cbbc9a
 
 * **To Move:** Arrows '🠔' '🠖' or `A` / `D`
