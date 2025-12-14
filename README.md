@@ -26,8 +26,8 @@ https://github.com/user-attachments/assets/8b887610-9929-446a-a543-dd62d2cbbc9a
 ### Rules:
 The game relies on a **Dash mechanic**:
 
-1.  **When you are BLACK ⚫:** You are vulnerable. If a note touches you, you lose a heart ❤️.
-2.  **When you are CYAN/BLUE (Dashing) 🔵:** You are in **ATTACK mode**. Dash into enemies to destroy them and score points!
+1. **When you are <img src="img/idle.png" width="25" style="vertical-align: middle;"> :** You are vulnerable. If a note touches you, you lose a heart ❤️.
+2. **When you are <img src="img/dash.png" width="25" style="vertical-align: middle;"> (Dashing) :** You are in **ATTACK mode**. Dash into enemies to destroy them and score points!
 
 ### Levels
 The game progresses through 3 distinct rounds:
