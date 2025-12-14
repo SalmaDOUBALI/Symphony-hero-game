@@ -9,7 +9,6 @@ export default class Player {
         this.height = 30;
         this.speed = 0.8;
         
-        // SAUT RÉGLÉ PLUS HAUT
         this.jumpForce = 18; 
         this.grounded = false;
         
@@ -19,20 +18,30 @@ export default class Player {
         this.dashTimer = 0;
         this.dashCooldown = 0;
 
+        // Mémoire de direction (1 = Droite, -1 = Gauche)
+        // Par défaut, on regarde à droite
+        this.lastDir = 1; 
+
         // Couleurs
         this.normalColor = '#000'; 
-        this.dashColor = '#00BFFF'; // DeepSkyBlue pour le dash
+        this.dashColor = '#00BFFF'; 
     }
 
     update(input, platforms) {
+        // Mise à jour de la direction du regard (si on bouge horizontalement)
+        if (input.AxisX !== 0) {
+            this.lastDir = input.AxisX;
+        }
+
         // --- GESTION DU DASH ---
         if (this.isDashing) {
-            this.vel.mult(0.96); 
+            // Friction très faible pour glisser loin (0.98 au lieu de 0.96)
+            this.vel.mult(0.98); 
             this.dashTimer--;
             
             if (this.dashTimer <= 0) {
                 this.isDashing = false;
-                this.vel.mult(0.5); 
+                this.vel.mult(0.5); // Freinage fin de dash
             }
         } else {
             // --- MOUVEMENT NORMAL ---
@@ -51,7 +60,7 @@ export default class Player {
                 return 'jump';
             }
 
-            // Dash
+            // Dash Trigger
             if (input.DashPressed && this.canDash && this.dashCooldown <= 0) {
                 this.startDash(input);
                 return 'dash';
@@ -60,7 +69,8 @@ export default class Player {
 
         // Physique
         this.vel.add(this.acc);
-        this.vel.limit(this.isDashing ? 25 : 10); 
+        // Vitesse max très élevée pendant le dash
+        this.vel.limit(this.isDashing ? 30 : 10); 
         this.pos.add(this.vel);
         this.acc.mult(0); 
 
@@ -70,7 +80,7 @@ export default class Player {
         this.grounded = false;
         platforms.forEach(p => this.resolvePlatformCollision(p));
 
-        // Limites
+        // Limites écran
         if (this.pos.x < 0) this.pos.x = 0;
         if (this.pos.x > 800 - this.width) this.pos.x = 800 - this.width;
         if (this.pos.y > 600) this.pos.y = 0; 
@@ -82,16 +92,30 @@ export default class Player {
         this.isDashing = true;
         this.canDash = false; 
         
-        // DASH PLUS LONG (plus facile pour toucher)
-        this.dashTimer = 25; 
-        this.dashCooldown = 45; 
+        // --- REGLAGES DASH ---
+        // Durée : 35 frames (très long, plus d'une demi-seconde d'attaque)
+        this.dashTimer = 35; 
+        this.dashCooldown = 50; 
         
+        // --- CALCUL DIRECTION ---
         let dirX = input.AxisX;
         let dirY = 0;
-        if (input.JumpPressed) dirY = -1; 
-        if (dirX === 0 && dirY === 0) dirX = 1; 
 
-        this.vel = new Vector(dirX, dirY).normalize().mult(25);
+        // Si on appuie sur Haut
+        if (input.JumpPressed) dirY = -1; 
+        
+        // Si on ne bouge pas horizontalement, on utilise la DERNIÈRE direction connue
+        // (C'est ça qui te permet de dasher sans appuyer sur les flèches)
+        if (dirX === 0) {
+            // Si on n'appuie pas non plus sur haut, on dash tout droit devant
+            if (dirY === 0) {
+                dirX = this.lastDir; 
+            }
+        }
+
+        // Application de la vitesse
+        // .mult(28) = Vitesse de départ très rapide
+        this.vel = new Vector(dirX, dirY).normalize().mult(28);
     }
 
     resolvePlatformCollision(rect) {
@@ -124,24 +148,31 @@ export default class Player {
         ctx.save();
         ctx.translate(this.pos.x + this.width/2, this.pos.y + this.height/2);
         
-        // --- AURA BLEU CIEL PERMANENTE ---
+        // Aura
         ctx.shadowBlur = 20;
-        ctx.shadowColor = '#00BFFF'; // Bleu Ciel
+        ctx.shadowColor = '#00BFFF'; 
 
         if (this.isDashing) {
-            ctx.shadowBlur = 50; // Ça brille fort !
+            ctx.shadowBlur = 60; // Grosse aura
             ctx.fillStyle = '#00BFFF';
             ctx.rotate(Math.random() * 0.5 - 0.25);
+            
+            // Effet de trainée (vitesse visuelle)
+            ctx.scale(1.2, 0.8); 
         } else {
             ctx.fillStyle = '#000';
         }
 
         ctx.fillRect(-this.width/2, -this.height/2, this.width, this.height);
 
-        // Yeux
+        // Yeux (regardent dans la direction du mouvement)
+        let eyeOffset = this.lastDir * 4; // Décalage des yeux selon la direction
+        
         ctx.fillStyle = this.isDashing ? 'black' : 'white';
-        ctx.fillRect(-8, -5, 6, 6);
-        ctx.fillRect(2, -5, 6, 6);
+        // Oeil gauche
+        ctx.fillRect(-8 + eyeOffset, -5, 6, 6);
+        // Oeil droit
+        ctx.fillRect(2 + eyeOffset, -5, 6, 6);
 
         ctx.restore();
     }
