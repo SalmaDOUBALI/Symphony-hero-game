@@ -1,3 +1,5 @@
+# Symphony Hero game
+Click in the cat to play!
 <p align="center">
   <a href="https://salmadoubali.github.io/Symphony-hero-game/" target="_blank">
     <img width="400" src="https://media.giphy.com/media/eXb2o9FrJLOYrQEVL0/giphy.gif" alt="Play Symphony Hero">
@@ -5,17 +7,16 @@
 </p>
 
     
-
-# 🎼 Symphony Hero
-
 **Symphony Hero** is a minimalist, rhythmic arcade game inspired by the spirit of *Flat Heroes*.
 You play as a small square surviving against waves of aggressive musical notes on an animated sheet music background.
 
-## 🎮 How to Play
+![Gameplay Screenshot](img/game.png)
 
+## 🎮 How to Play
 The goal is simple: survive the waves and defeat enemies to reach the target score.
 
-### 🕹️ Controls
+[Watch Demo](img/tuto.mp4)
+
 * **Move:** Arrows `⬅️` `➡️` or `A` / `D`
 * **Jump:** Arrow `⬆️`, `W` or `Space`
 * **ATTACK (Dash):** `SHIFT` + Direction keys
