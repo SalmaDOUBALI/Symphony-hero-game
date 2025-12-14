@@ -14,11 +14,8 @@ You play as a small square surviving against waves of aggressive musical notes o
 
 ## How to Play
 The goal is simple: survive the waves and defeat enemies to reach the target score.
-
-[Watch Demo](img/tuto.mp4)
-
-[![Watch Demo](https://img.shields.io/badge/▶_Watch_Demo-Click_Here-red?style=for-the-badge)]([https://github.com/GiuseppeSpathis/arcade-action-game/issues/14](https://github.com/user-attachments/assets/0cbfd1aa-2f07-40a4-b574-779f6e79b9ad
-))
+**see this demo!**
+https://github.com/user-attachments/assets/8b887610-9929-446a-a543-dd62d2cbbc9a
 
 * **To Move:** Arrows '🠔' '🠖' or `A` / `D`
 * **To Jump:** Arrow '🠕', `W` or `Space`
