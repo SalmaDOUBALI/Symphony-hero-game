@@ -1,8 +1,8 @@
 # Symphony Hero game
-Click in the cat to play!
+Click here to play!
 <p align="center">
   <a href="https://salmadoubali.github.io/Symphony-hero-game/" target="_blank">
-    <img width="400" src="https://media.giphy.com/media/eXb2o9FrJLOYrQEVL0/giphy.gif" alt="Play Symphony Hero">
+    <img width="600" src="img/cover.png" alt="Play Symphony Hero">
   </a>
 </p>
 
