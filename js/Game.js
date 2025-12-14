@@ -198,6 +198,7 @@ export default class Game {
         if (state === 'GAMEOVER') go.classList.remove('hidden');
     }
 
+    
     gameOver(win) {
         this.state = 'GAMEOVER';
         clearInterval(this.spawnInterval);

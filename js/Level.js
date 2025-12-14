@@ -118,6 +118,7 @@ export default class Level {
             }
         });
         
+        
         ctx.shadowBlur = 0;
         ctx.shadowOffsetY = 0;
     }
