@@ -17,11 +17,14 @@ The goal is simple: survive the waves and defeat enemies to reach the target sco
 
 [Watch Demo](img/tuto.mp4)
 
-* **Move:** Arrows or `A` / `D`
-* **Jump:** Arrow `⬆️`, `W` or `Space`
-* **ATTACK (Dash):** `SHIFT` + Direction keys
+[![Watch Demo](https://img.shields.io/badge/▶_Watch_Demo-Click_Here-red?style=for-the-badge)]([https://github.com/GiuseppeSpathis/arcade-action-game/issues/14](https://github.com/user-attachments/assets/0cbfd1aa-2f07-40a4-b574-779f6e79b9ad
+))
 
-### ⚔️ Rules (Very Important!)
+* **To Move:** Arrows '🠔' '🠖' or `A` / `D`
+* **To Jump:** Arrow '🠕', `W` or `Space`
+* **To ATTACK (Dash):** `SHIFT` + Direction keys
+
+### Rules:
 The game relies on a **Dash mechanic**:
 
 1.  **When you are BLACK ⚫:** You are vulnerable. If a note touches you, you lose a heart ❤️.
