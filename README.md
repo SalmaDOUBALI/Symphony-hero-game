@@ -1,4 +1,9 @@
-#To play my game click here: https://salmadoubali.github.io/Symphony-hero-game/
+<p align="center">
+  <a href="https://salmadoubali.github.io/Symphony-hero-game/" target="_blank">
+    <img width="300" src="https://media.giphy.com/media/3o6gEfTt3x2LsVZQRy/giphy.gif" alt="Cliquer pour jouer à Symphony Hero">
+  </a>
+</p>
+
 
 # 🎼 Symphony Hero
 
