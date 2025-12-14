@@ -12,12 +12,12 @@ You play as a small square surviving against waves of aggressive musical notes o
 
 ![Gameplay Screenshot](img/game.png)
 
-## 🎮 How to Play
+## How to Play
 The goal is simple: survive the waves and defeat enemies to reach the target score.
 
 [Watch Demo](img/tuto.mp4)
 
-* **Move:** Arrows `⬅️` `➡️` or `A` / `D`
+* **Move:** Arrows or `A` / `D`
 * **Jump:** Arrow `⬆️`, `W` or `Space`
 * **ATTACK (Dash):** `SHIFT` + Direction keys
 
@@ -27,9 +27,7 @@ The game relies on a **Dash mechanic**:
 1.  **When you are BLACK ⚫:** You are vulnerable. If a note touches you, you lose a heart ❤️.
 2.  **When you are CYAN/BLUE (Dashing) 🔵:** You are in **ATTACK mode**. Dash into enemies to destroy them and score points!
 
-![Gameplay Screenshot](img/cover.png)
-
-### 🏆 Levels
+### Levels
 The game progresses through 3 distinct rounds:
 1.  **Level 1 (Pink):** Gentle introduction.
 2.  **Level 2 (Blue):** Staircase platforms layout.
